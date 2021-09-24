@@ -1,0 +1,1 @@
+0 0 * * * if [ ''$AUTO_ROTATE == 'true' ]; then /rotateCertificates.sh; fi
