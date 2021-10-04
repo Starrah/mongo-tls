@@ -9,4 +9,4 @@ ENV AUTO_ROTATE=true
 RUN crontab -u root /crontab.txt
 
 ENTRYPOINT ["/entrypoint.sh", "--tlsCertificateKeyFile", "/cert.pem"]
-CMD ["--tlsMode", "requireTLS", "--sslDisabledProtocols", "TLS1_0,TLS1_1"]
+CMD ["--tlsMode", "requireTLS", "--tlsDisabledProtocols", "TLS1_0,TLS1_1"]
