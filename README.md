@@ -51,9 +51,10 @@ The certificate directory should either:
 ### Environment
 - In this image, the following environments are defined:
 
-| Environment | default | description |
-| -------- | -------- | -------- |
-| AUTO_ROTATE     | true   | Whether to automatically reload the certificate with [db.rotateCertifiates](https://docs.mongodb.com/manual/reference/method/db.rotateCertificates/#mongodb-method-db.rotateCertificates). (Frequency: every day)    |
+| Environment | default   | description                                                                                                                                                                                          |
+|-------------|-----------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| AUTO_ROTATE | true      | Whether to automatically reload the certificate with [db.rotateCertifiates](https://docs.mongodb.com/manual/reference/method/db.rotateCertificates/#mongodb-method-db.rotateCertificates).           |
+| ROTATE_CRON | 0 0 * * * | The [crontab](https://man7.org/linux/man-pages/man5/crontab.5.html) expression for the certificate rotating task. The default value "0 0 * * *" means that certificate is reloaded EVERYDAY at 0:00. |
 
 - Besides, since this image is built from `mongo:latest`, all other environments defined in the [`mongo` official docker image](https://hub.docker.com/_/mongo) is still available.
 ### Command arguments
